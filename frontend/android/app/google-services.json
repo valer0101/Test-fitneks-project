@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "640082759557",
+    "project_id": "fitneks-live-gifts",
+    "storage_bucket": "fitneks-live-gifts.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:640082759557:android:ecf1a801d8035004c1feec",
+        "android_client_info": {
+          "package_name": "com.example.frontend"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBd9XoZvsgkJSbx-vOqPQM0hnXBDOK50VI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
