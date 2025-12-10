@@ -1,0 +1,33 @@
+version: '3.8'
+services:
+  # This service defines our PostgreSQL database container
+  db:
+    image: postgres:15 # Use the official PostgreSQL version 15 image
+    restart: always # Always restart the database if it crashes
+    environment:
+      # These are the login credentials for our database
+      - POSTGRES_USER=fitneks
+      - POSTGRES_PASSWORD=fitneks
+      - POSTGRES_DB=fitneks
+    ports:
+      # This connects our Mac's port 5432 to the container's port 5432
+      # so our app can talk to the database.
+      - "5432:5432"
+    volumes:
+      # This ensures our database data is safely stored on our Mac's hard drive
+      # even if we stop or delete the container.
+      - ./postgres_data:/var/lib/postgresql/data
+  # ✅ NEW: Redis container for events and job queue
+  redis:
+    image: redis:7-alpine
+    container_name: fitneks-redis
+    restart: always
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    command: redis-server --appendonly yes
+
+# ✅ NEW: Add volumes section
+volumes:
+  redis_data:
