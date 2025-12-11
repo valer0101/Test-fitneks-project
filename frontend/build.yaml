@@ -1,0 +1,13 @@
+targets:
+  $default:
+    builders:
+      freezed:
+        options:
+          # This option explicitly tells the freezed generator to create
+          # the necessary fromJson/toJson method signatures, which in turn
+          # correctly triggers the json_serializable generator.
+          write_for_json: true
+      json_serializable:
+        options:
+          # This is a best-practice option for json_serializable
+          explicit_to_json: true
